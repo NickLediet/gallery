@@ -1,0 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css?family=Anton|PT+Serif')
+
+=header()
+	font-family: 'Anton', sans-serif
+=sub-header()
+	font-family: 'PT Serif', serif
+=columns($number, $size, $gap)
+	columns: $size $number
+	-webkit-columns: $size $number
+	-moz-columns: $size $number
+	column-gap: $gap
+	-moz-column-gap: $gap
+
+
+body
+	display: flex
+	flex-direction: column
+	align-items: center
+dialog
+	border: none
+	// background: red
+	height: 80%
+	width: 80%
+	&::backdrop
+		background-color: #333
+		opacity: 0.5
+		filter: blur(250px)
+
+h1
+	+header
+	letter-spacing: 2px
+h2
+	+sub-header
+.site-header
+	text-align: center
+	padding-top: -20px
+
+#gallery-container
+	+columns($number: 2, $size: 250px, $gap: 5px)
+	padding-top: 15px
+	// align-self: center
+	max-width: 66%
+	overflow: normal	
+	.gallery-item 
+		width: 100%
+		height: auto
+		cursor: pointer
+		filter: grayscale(100%)
+		&:hover
+			animation: changeFilter 500ms forwards ease-out
+		@keyframes changeFilter
+			0%
+				filter: grayscale(100%)
+			100%
+				filter: grayscale(0%)
+		&.isActive
+			width: 720px
+			
+
+#lightbox-popup
+	position: fixed
+	margin-top: 20px
+	border: none
+	width: 60%
+	height: auto
+	&::backdrop
+		opacity: 0.8
+		background: #000
+	#lightbox-title
+		+sub-header
+		text-align: center
+		font-size: 24px
+	#lightbox-image
+		width: 100%	
+
+
+

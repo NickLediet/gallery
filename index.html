@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Nick's Gallery Example</title>
+		<!-- App Styles -->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		
+	</head>
+	<body>
+		<dialog id="lightbox-popup">
+			<h2 id="lightbox-title">Waiting for image title ...</h2>
+		</dialog>
+		<h1 class="site-header">PHOTOGRAPHY OF NICHOLAS LEDIET</h1>
+		<h2 class="site-header">A Gallery Experiment and Assignment. This gallery makes use of CSS3 columns,</br> HTML5 dialog (blessed be thy name ), ES6 syntax and of course the Flickr API</h2>
+		<!-- Container for Gallery -->
+		<div id="gallery-container"></div>
+		
+		<!-- Pollyfills (Beacuse I guess that's a thing)-->
+		<script src="bower_components/dialog-polyfill/dialog-polyfill.js"></script><!-- So, the point of this is to allow me to use pollyfill make use of the dialog element that isn't yet in the HTML5 spec, which is stupid, because it's awesome.  Seriously Mozilla has an entire documentation dedicated to this thing, but they have yet to implement it into their own browser.  Any was it saves like 20 line of CSS and tricky positing.  Meanwhile chrome and Safari have been ontop of this forever. Thank you Google For putting this up-->
+		<script>
+			// src'd from https://github.com/GoogleChrome/dialog-polyfill
+			var dialog = document.querySelector('dialog');
+			dialogPolyfill.registerDialog(dialog);
+			// Now dialog acts like a native <dialog>.
+			// dialog.showModal();
+		</script>
+		<!-- Gallery scripts -->
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>

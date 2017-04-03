@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|PT+Serif");
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+dialog {
+  border: none;
+  height: 80%;
+  width: 80%; }
+  dialog::backdrop {
+    background-color: #333;
+    opacity: 0.5;
+    filter: blur(250px); }
+
+h1 {
+  font-family: "Anton", sans-serif;
+  letter-spacing: 2px; }
+
+h2 {
+  font-family: "PT Serif", serif; }
+
+.site-header {
+  text-align: center;
+  padding-top: -20px; }
+
+#gallery-container {
+  columns: 250px 2;
+  -webkit-columns: 250px 2;
+  -moz-columns: 250px 2;
+  column-gap: 5px;
+  -moz-column-gap: 5px;
+  padding-top: 15px;
+  max-width: 66%;
+  overflow: normal; }
+  #gallery-container .gallery-item {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    filter: grayscale(100%); }
+    #gallery-container .gallery-item:hover {
+      animation: changeFilter 500ms forwards ease-out; }
+@keyframes changeFilter {
+  0% {
+    filter: grayscale(100%); }
+  100% {
+    filter: grayscale(0%); } }
+    #gallery-container .gallery-item.isActive {
+      width: 720px; }
+
+#lightbox-popup {
+  position: fixed;
+  margin-top: 20px;
+  border: none;
+  width: 60%;
+  height: auto; }
+  #lightbox-popup::backdrop {
+    opacity: 0.8;
+    background: #000; }
+  #lightbox-popup #lightbox-title {
+    font-family: "PT Serif", serif;
+    text-align: center;
+    font-size: 24px; }
+  #lightbox-popup #lightbox-image {
+    width: 100%; }
+
+/*# sourceMappingURL=app.css.map */
