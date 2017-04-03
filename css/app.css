@@ -20,6 +20,12 @@ h1 {
 h2 {
   font-family: "PT Serif", serif; }
 
+a {
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  color: #333;
+  font-size: 1em; }
+
 .site-header {
   text-align: center;
   padding-top: -20px; }
